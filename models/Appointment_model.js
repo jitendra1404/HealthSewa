@@ -14,8 +14,7 @@ const Appointment =mongoose.model('Appointment', {
     },
 
     sex : {
-        type : Date,
-        default:Date.now
+        type : String
     },
     
     status : {
