@@ -2,34 +2,46 @@ const mongoose =require('mongoose');
 
 const Appointment =mongoose.model('Appointment', {
 
-    fullname : {
-        type :String,
+    HealthIssue: {
+        type:String
+    },
+
+    Occupation : {
+        type : String,
         require:true,
-        trim:true,
     },
 
-    age : {
-        type :String, 
-        require:true
-    },
-
-    sex : {
-        type : String
-    },
-    
-    status : {
+    Behaviors : {
         type : String,
         require:true   
     },
 
-    occupation : {
-        type : String,
-        require:true,
-      
-    },
-    date:{  type:Date,
+    Date:{  type:Date,
         default:Date.now
     },
+
+    Age : {
+        type :String, 
+        require:true
+    },
+
+    ConsultantHour : {
+        type :String
+    },
+
+    Statement : {
+        type :String
+    },
+
+
+    
+
+   
+    
+   
+
+
+    
    statement:{
        type:String
    }

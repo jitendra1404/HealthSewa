@@ -2,16 +2,16 @@ const mongoose =require('mongoose')
 
 const Report =mongoose.model('Report', {
 
-    report_title : {
+    Report_title : {
         type : String,
         require:true
     },
 
-    report_discrption : {
+    Report_discrption : {
         type :String,
         require:true
     },
-    custo_name:{
+    Specialist_name:{
         type:String,
         require:true
     },

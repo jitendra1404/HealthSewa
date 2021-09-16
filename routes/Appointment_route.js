@@ -6,23 +6,23 @@ const router=express.Router();
 //Appointment insert........
 router.post("/Appointment/insert",  function(req,res) {
 
-const fullname =req.body.fullname;
-const age= req.body.age;
-const sex= req.body.sex;
-const status= req.body.status;
-const occupation=req.body.occupation;
-const date= req.body.date;
-const statement=req.body.statement;
+const HealthIssue =req.body.HealthIssue;
+const Age= req.body.Age;
+const Behaviors= req.body.Behaviors;
+const ConsultantHour= req.body.ConsultantHour;
+const Occupation=req.body.occupation;
+const Date= req.body.date;
+const Statement=req.body.Statement;
 
 
 const Appointmentdata = new Appointment({
-    fullname:fullname,
-    age:age,
-    sex:sex,
-    status:status,
-    occupation:occupation,
-    date:date,
-    statement:statement
+    HealthIssue:HealthIssue,
+    Age:Age,
+    Behaviors:Behaviors,
+    ConsultantHour:ConsultantHour,
+    Occupation:Occupation,
+    Date:Date,
+    Statement:Statement
     });
 
 Appointmentdata.save()
@@ -61,24 +61,24 @@ router.get("/Appointment/:custo_id", function(req, res) {
 
  router.put("/Appointment/update/:custo_id", function (req, res) {
 
-    const fullname =req.body.fullname;
-const age= req.body.age;
-const sex= req.body.sex;
-const status= req.body.status;
-const occupation=req.body.occupation;
-const date= req.body.date;
-const statement=req.body.statement;
-    const id = req.params.custo_id;
+const HealthIssue =req.body.HealthIssue;
+const Age= req.body.Age;
+const Behaviors= req.body.Behaviors;
+const ConsultantHour= req.body.ConsultantHour;
+const Occupation=req.body.Occupation;
+const Date= req.body.Date;
+const Statement=req.body.Statement;
+const id = req.params.custo_id;
  
      Appointment.updateOne({ _id: id
          }, {
-            fullname:fullname,
-            age:age,
-            sex:sex,
-            status:status,
-            occupation:occupation,
-            date:date,
-            statement:statement
+            HealthIssue:HealthIssue,
+            Age:Age,
+            Behaviors:Behaviors,
+            ConsultantHour:ConsultantHour,
+            Occupation:Occupation,
+            Date:Date,
+            Statement:Statement
          })
          .then(function (result) {
              res.status(200).json({

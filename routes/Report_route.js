@@ -5,14 +5,15 @@ const router=express.Router();
 router.post("/Report/insert", 
 function(req, res) {
 
-const report_title = req.body.report_title;
-const report_discription =req.body.report_discription;
-const custo_name = req.body.custo_name;
+const Report_title = req.body.Report_title;
+const Report_discription =req.body.Report_discription;
+const Specialist_name = req.body.Specialist_name;
 
 const ReportData = new Report({
-    report_title:report_title, 
-    custo_name:custo_name,
-    report_discrption:report_discription});
+    Report_title:Report_title, 
+    Report_discription:Report_discription,
+    Specialist_name:Specialist_name});
+
     ReportData.save()
 .then(function(result){
     console.log(result)
@@ -41,16 +42,16 @@ router.get('/Report/:custo_id', function(req,res){
 })
 
 router.put('/Report/update/:custo_id', function(req,res){
-    const custo_name = req.body.custo_name;
-    const report_discrption=req.body.report_discrption;
-    const report_title=req.body.report_title;
+    const Report_title = req.body.Report_title;
+    const Report_discrption =req.body.Report_discription;
+    const Specialist_name=req.body.Specialist_name;
     const id =req.params.custo_id
 
 Review.updateOne({_id: id}, 
     {
-    custo_name:custo_name,
-    report_discrption:report_discrption,
-    report_title:report_title
+    Report_title:Report_title,
+    Report_discrption:Report_discrption,
+    Specialist_name:Specialist_name
 })
 .then(function(result){
     res.status(200).json({message:"Report Update Success"})
